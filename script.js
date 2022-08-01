@@ -18,18 +18,17 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // Assignment code here
-var numbers =(1,2,3,4,5,6,7,8,9);
-var symbols =("!","@", "#","$","%","^","&","*","(",")");
-var uppercase = "";
-var lowercase = "a" ;
-var length = "";
-confirmLower = true;
- 
+  var options = [1,2,3,4,5,6,7,8,9];
+  var symbols = ["!","@", "#","$","%","^","&","*","(",")"]
+  var uppercase = [""]
+  var lowercase = ["a"]
+  length = [""]
 
+ 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-console.log(length)
+
 
 // Write password to the #password input
 function writePassword() {
@@ -48,18 +47,21 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   passwordLength = window.prompt("Select length between 8 and 128");
   console.log("password length " + passwordLength);
-  confirmLower = confirm("Would you like to use lowercase letters?");
-    if(confirmLower === true) {
-    console.log("lowercase" + confirmLower);
+  if (!passwordLength) {
+    window.alert("You must enter a number between 8 and 128");
+    return;
     
-    } else {
-    console.log("No lowercase numbers will be used");
+  }
+  confirmLower = confirm("Would you like to use lowercase letters?");
+    if(confirmLower===true) {
+      console.log("lowercase" + confirmLower)
     }
+
   confirmUpper = confirm("Would you like to use uppercase letters?");
     if(confirmUpper === true) {
       console.log("uppercase" + confirmUpper); 
     } else {
-      console.log("No lowercase letters will be used");
+      console.log("No uppercase letters will be used");
     }
   confirmNumber = confirm("Would you like to use numbers?");
     if(confirmNumber === true) {
@@ -76,15 +78,16 @@ function generatePassword() {
 
   var passwordBlank = [];
 
-for (var i =0; i < length; i++) {
-  var allChoices = userChoices[Math.floor(math.random() * userChoices.length)];
+  for (var i =0; i < length; i++) {
+  var password = options[Math.floor(math.random() * options.length)];
   passwordBlank.push(allChoices);
-  console.log(allChoices);
-}
+  console.log("allChoices");
+    }
 
-var password = passwordBlank.join("");
-console.log("Your password is: " + password);
-return password;
+  var password = passwordBlank.join("");
+
+  console.log("Your password is: " + password);
+  return password;
 
 }
 

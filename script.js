@@ -1,5 +1,18 @@
 // Assignment code here
 
+var obj = {
+  
+  numbers: [1,2,3,4,5,6,7,8,9],
+  symbols: ["!","@", "#","$","%","^","&","*","(",")"],
+  uppercase: [""],
+  lowercase: ["a"],
+}
+
+length = [""]
+
+
+console.log(Object.values(obj));
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -15,14 +28,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-// Assignment code here
-  var options = [1,2,3,4,5,6,7,8,9];
-  var symbols = ["!","@", "#","$","%","^","&","*","(",")"]
-  var uppercase = [""]
-  var lowercase = ["a"]
-  length = [""]
 
  
 // Get references to the #generate element
@@ -55,6 +60,8 @@ function generatePassword() {
   confirmLower = confirm("Would you like to use lowercase letters?");
     if(confirmLower===true) {
       console.log("lowercase" + confirmLower)
+    } else {
+      console.log("No lowercase letters will be used");
     }
 
   confirmUpper = confirm("Would you like to use uppercase letters?");
@@ -76,13 +83,16 @@ function generatePassword() {
     console.log("No symbols will be used");
     }
 
-  var passwordBlank = [];
+    var passwordBlank = [""];
 
-  for (var i =0; i < length; i++) {
-  var password = options[Math.floor(math.random() * options.length)];
-  passwordBlank.push(allChoices);
-  console.log("allChoices");
-    }
+  for (var i = 0; i < length; i++) {
+  var password = (obj)[Math.floor(math.random() * password.length)];
+  passwordBlank.push();}
+  if (password) {
+    console.log("obj");
+  } else {
+    console.log("nada");
+  }
 
   var password = passwordBlank.join("");
 
@@ -90,4 +100,5 @@ function generatePassword() {
   return password;
 
 }
+
 
